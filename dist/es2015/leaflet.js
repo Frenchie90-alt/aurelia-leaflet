@@ -226,6 +226,7 @@ export let LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useV
     }
     let removedLayers = oldLayers.filter(oldLayer => {
       let removed = true;
+      if (typeof this.layers === "undefined") return true;
       if (!this.layers.hasOwnProperty(type)) {
         return true;
       }
