@@ -1,19 +1,21 @@
 define(['exports'], function (exports) {
   'use strict';
 
-  Object.defineProperty(exports, '__esModule', {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
 
-  var AureliaLeafletException = function AureliaLeafletException(message) {
+  var AureliaLeafletException = exports.AureliaLeafletException = function AureliaLeafletException(message) {
     _classCallCheck(this, AureliaLeafletException);
 
     this.name = 'AureliaLeafletException';
 
     this.message = message;
   };
-
-  exports.AureliaLeafletException = AureliaLeafletException;
 });
