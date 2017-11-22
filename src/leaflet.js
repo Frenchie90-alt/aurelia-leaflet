@@ -1,5 +1,4 @@
 import {customElement, useView, bindable} from 'aurelia-framework';
-//import {inject, Lazy} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
 import {AureliaLeafletException} from './aurelia-leaflet-exceptions';
 import {defaultMapOptions, defaultLayers} from './leaflet-defaults';
@@ -8,7 +7,6 @@ import Leaflet from 'leaflet';
 
 @customElement('leaflet')
 @useView('./leaflet.html')
-//@inject(Leaflet, Lazy.of(EventAggregator), Element)
 export class LeafletCustomElement {
   static inject = [Leaflet, EventAggregator, Element];
 
@@ -186,8 +184,6 @@ export class LeafletCustomElement {
     }
     let removedLayers = oldLayers.filter((oldLayer) => {
       let removed = true;
-      if (typeof this.layers === "undefined")
-            return true;
       if (!this.layers.hasOwnProperty(type)) {
         return true;
       }

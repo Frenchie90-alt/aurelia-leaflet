@@ -315,7 +315,6 @@ define(['exports', 'aurelia-framework', 'aurelia-event-aggregator', './aurelia-l
       }
       var removedLayers = oldLayers.filter(function (oldLayer) {
         var removed = true;
-        if (typeof _this8.layers === "undefined") return true;
         if (!_this8.layers.hasOwnProperty(type)) {
           return true;
         }

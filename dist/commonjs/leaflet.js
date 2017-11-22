@@ -318,7 +318,6 @@ var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFr
     }
     var removedLayers = oldLayers.filter(function (oldLayer) {
       var removed = true;
-      if (typeof _this8.layers === "undefined") return true;
       if (!_this8.layers.hasOwnProperty(type)) {
         return true;
       }

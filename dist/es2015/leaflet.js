@@ -44,7 +44,6 @@ function _initializerWarningHelper(descriptor, context) {
 }
 
 import { customElement, useView, bindable } from 'aurelia-framework';
-
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { AureliaLeafletException } from './aurelia-leaflet-exceptions';
 import { defaultMapOptions, defaultLayers } from './leaflet-defaults';
@@ -226,7 +225,6 @@ export let LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useV
     }
     let removedLayers = oldLayers.filter(oldLayer => {
       let removed = true;
-      if (typeof this.layers === "undefined") return true;
       if (!this.layers.hasOwnProperty(type)) {
         return true;
       }
