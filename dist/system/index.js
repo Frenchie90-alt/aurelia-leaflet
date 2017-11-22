@@ -1,24 +1,23 @@
-System.register(['leaflet'], function (_export) {
-  'use strict';
+'use strict';
 
-  var Leaflet;
+System.register(['aurelia-pal', './leaflet'], function (_export, _context) {
+    "use strict";
 
-  _export('configure', configure);
+    var PLATFORM, LeafletCustomElement;
+    function configure(frameworkConfig) {
+        frameworkConfig.globalResources(PLATFORM.moduleName('./leaflet'));
+    }
 
-  function configure(frameworkConfig) {
-    var _ref = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+    _export('configure', configure);
 
-    var _ref$LeafletDefaultImagePath = _ref.LeafletDefaultImagePath;
-    var LeafletDefaultImagePath = _ref$LeafletDefaultImagePath === undefined ? 'jspm_packages/npm/leaflet@1.0.2/dist/images/' : _ref$LeafletDefaultImagePath;
-
-    Leaflet.Icon.Default.imagePath = LeafletDefaultImagePath;
-    frameworkConfig.globalResources('./leaflet');
-  }
-
-  return {
-    setters: [function (_leaflet) {
-      Leaflet = _leaflet['default'];
-    }],
-    execute: function () {}
-  };
+    return {
+        setters: [function (_aureliaPal) {
+            PLATFORM = _aureliaPal.PLATFORM;
+        }, function (_leaflet) {
+            LeafletCustomElement = _leaflet.default;
+        }],
+        execute: function () {
+            _export('LeafletCustomElement', LeafletCustomElement);
+        }
+    };
 });

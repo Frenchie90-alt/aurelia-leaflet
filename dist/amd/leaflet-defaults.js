@@ -1,10 +1,10 @@
 define(['exports'], function (exports) {
   'use strict';
 
-  Object.defineProperty(exports, '__esModule', {
+  Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  var defaultMapOptions = {
+  var defaultMapOptions = exports.defaultMapOptions = {
     center: {
       lat: 47.3686498,
       lng: 8.53918250
@@ -12,8 +12,7 @@ define(['exports'], function (exports) {
     zoomLevel: 13
   };
 
-  exports.defaultMapOptions = defaultMapOptions;
-  var defaultLayers = {
+  var defaultLayers = exports.defaultLayers = {
     base: [{
       id: 'OSM Tiles',
       type: 'tile',
@@ -24,5 +23,4 @@ define(['exports'], function (exports) {
     }],
     overlay: []
   };
-  exports.defaultLayers = defaultLayers;
 });
