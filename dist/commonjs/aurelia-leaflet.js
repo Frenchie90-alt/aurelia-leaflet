@@ -7,10 +7,6 @@ exports.default = exports.LeafletCustomElement = exports.defaultLayers = exports
 
 var _dec, _dec2, _class2, _desc, _value, _class3, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class4, _temp;
 
-exports.configure = configure;
-
-var _aureliaPal = require('aurelia-pal');
-
 var _aureliaFramework = require('aurelia-framework');
 
 var _aureliaEventAggregator = require('aurelia-event-aggregator');
@@ -69,10 +65,6 @@ var AureliaLeafletException = exports.AureliaLeafletException = function Aurelia
 
   this.message = message;
 };
-
-function configure(frameworkConfig) {
-  frameworkConfig.globalResources(_aureliaPal.PLATFORM.moduleName('./leaflet'));
-}
 
 var defaultMapOptions = exports.defaultMapOptions = {
   center: {

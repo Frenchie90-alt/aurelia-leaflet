@@ -43,7 +43,6 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { PLATFORM } from 'aurelia-pal';
 import { customElement, useView, bindable } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { Leaflet } from 'leaflet';
@@ -56,10 +55,6 @@ export let AureliaLeafletException = class AureliaLeafletException {
     this.message = message;
   }
 };
-
-export function configure(frameworkConfig) {
-  frameworkConfig.globalResources(PLATFORM.moduleName('./leaflet'));
-}
 
 export var defaultMapOptions = {
   center: {

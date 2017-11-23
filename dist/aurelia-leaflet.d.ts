@@ -1,7 +1,4 @@
 import {
-  PLATFORM
-} from 'aurelia-pal';
-import {
   customElement,
   useView,
   bindable
@@ -16,9 +13,6 @@ export declare class AureliaLeafletException {
   name: any;
   constructor(message?: any);
 }
-export declare function configure(frameworkConfig?: any): any;
-
-////export { LeafletCustomElement };
 export declare var defaultMapOptions: any;
 export declare var defaultLayers: any;
 export declare class LeafletCustomElement {

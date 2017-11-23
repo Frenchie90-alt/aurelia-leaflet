@@ -1,11 +1,10 @@
-define(['exports', 'aurelia-pal', 'aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], function (exports, _aureliaPal, _aureliaFramework, _aureliaEventAggregator, _leaflet) {
+define(['exports', 'aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], function (exports, _aureliaFramework, _aureliaEventAggregator, _leaflet) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = exports.LeafletCustomElement = exports.defaultLayers = exports.defaultMapOptions = exports.AureliaLeafletException = undefined;
-  exports.configure = configure;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -61,10 +60,6 @@ define(['exports', 'aurelia-pal', 'aurelia-framework', 'aurelia-event-aggregator
 
     this.message = message;
   };
-
-  function configure(frameworkConfig) {
-    frameworkConfig.globalResources(_aureliaPal.PLATFORM.moduleName('./leaflet'));
-  }
 
   var defaultMapOptions = exports.defaultMapOptions = {
     center: {

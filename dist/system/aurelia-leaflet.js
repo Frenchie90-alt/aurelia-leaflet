@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['aurelia-pal', 'aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], function (_export, _context) {
+System.register(['aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], function (_export, _context) {
   "use strict";
 
-  var PLATFORM, customElement, useView, bindable, EventAggregator, Leaflet, _dec, _dec2, _class2, _desc, _value, _class3, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class4, _temp, AureliaLeafletException, defaultMapOptions, defaultLayers, LeafletCustomElement, LayerFactory;
+  var customElement, useView, bindable, EventAggregator, Leaflet, _dec, _dec2, _class2, _desc, _value, _class3, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class4, _temp, AureliaLeafletException, defaultMapOptions, defaultLayers, LeafletCustomElement, LayerFactory;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -50,16 +50,8 @@ System.register(['aurelia-pal', 'aurelia-framework', 'aurelia-event-aggregator',
 
   
 
-  function configure(frameworkConfig) {
-    frameworkConfig.globalResources(PLATFORM.moduleName('./leaflet'));
-  }
-
-  _export('configure', configure);
-
   return {
-    setters: [function (_aureliaPal) {
-      PLATFORM = _aureliaPal.PLATFORM;
-    }, function (_aureliaFramework) {
+    setters: [function (_aureliaFramework) {
       customElement = _aureliaFramework.customElement;
       useView = _aureliaFramework.useView;
       bindable = _aureliaFramework.bindable;
