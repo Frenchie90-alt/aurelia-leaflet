@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], function (_export, _context) {
+System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-leaflet-exceptions', './leaflet-defaults', './helpers/layer-factory', 'leaflet'], function (_export, _context) {
   "use strict";
 
-  var customElement, useView, bindable, EventAggregator, Leaflet, _dec, _dec2, _class2, _desc, _value, _class3, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class4, _temp, AureliaLeafletException, defaultMapOptions, defaultLayers, LeafletCustomElement, LayerFactory;
+  var customElement, useView, bindable, EventAggregator, AureliaLeafletException, defaultMapOptions, defaultLayers, LayerFactory, Leaflet, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class3, _temp, LeafletCustomElement;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -14,6 +14,8 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], fu
       value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
     });
   }
+
+  
 
   function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
     var desc = {};
@@ -48,8 +50,6 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], fu
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
   }
 
-  
-
   return {
     setters: [function (_aureliaFramework) {
       customElement = _aureliaFramework.customElement;
@@ -57,45 +57,18 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], fu
       bindable = _aureliaFramework.bindable;
     }, function (_aureliaEventAggregator) {
       EventAggregator = _aureliaEventAggregator.EventAggregator;
+    }, function (_aureliaLeafletExceptions) {
+      AureliaLeafletException = _aureliaLeafletExceptions.AureliaLeafletException;
+    }, function (_leafletDefaults) {
+      defaultMapOptions = _leafletDefaults.defaultMapOptions;
+      defaultLayers = _leafletDefaults.defaultLayers;
+    }, function (_helpersLayerFactory) {
+      LayerFactory = _helpersLayerFactory.LayerFactory;
     }, function (_leaflet) {
       Leaflet = _leaflet.Leaflet;
     }],
     execute: function () {
-      _export('AureliaLeafletException', AureliaLeafletException = function AureliaLeafletException(message) {
-        
-
-        this.name = 'AureliaLeafletException';
-
-        this.message = message;
-      });
-
-      _export('AureliaLeafletException', AureliaLeafletException);
-
-      _export('defaultMapOptions', defaultMapOptions = {
-        center: {
-          lat: 47.3686498,
-          lng: 8.53918250
-        },
-        zoomLevel: 13
-      });
-
-      _export('defaultMapOptions', defaultMapOptions);
-
-      _export('defaultLayers', defaultLayers = {
-        base: [{
-          id: 'OSM Tiles',
-          type: 'tile',
-          url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-          options: {
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          }
-        }],
-        overlay: []
-      });
-
-      _export('defaultLayers', defaultLayers);
-
-      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec(_class2 = _dec2(_class2 = (_class3 = (_temp = _class4 = function () {
+      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = (_temp = _class3 = function () {
         function LeafletCustomElement(leaflet, eventAggregator, element) {
           var _this = this;
 
@@ -406,288 +379,24 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', 'leaflet'], fu
         };
 
         return LeafletCustomElement;
-      }(), _class4.inject = [Leaflet, EventAggregator, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class3.prototype, 'layers', [bindable], {
+      }(), _class3.inject = [Leaflet, EventAggregator, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
         enumerable: true,
         initializer: null
-      }), _descriptor2 = _applyDecoratedDescriptor(_class3.prototype, 'mapEvents', [bindable], {
+      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [bindable], {
         enumerable: true,
         initializer: null
-      }), _descriptor3 = _applyDecoratedDescriptor(_class3.prototype, 'mapOptions', [bindable], {
+      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'mapOptions', [bindable], {
         enumerable: true,
         initializer: null
-      }), _descriptor4 = _applyDecoratedDescriptor(_class3.prototype, 'withLayerControl', [bindable], {
+      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, 'withLayerControl', [bindable], {
         enumerable: true,
         initializer: null
-      }), _descriptor5 = _applyDecoratedDescriptor(_class3.prototype, 'withScaleControl', [bindable], {
+      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, 'withScaleControl', [bindable], {
         enumerable: true,
         initializer: null
-      })), _class3)) || _class2) || _class2));
+      })), _class2)) || _class) || _class));
 
       _export('LeafletCustomElement', LeafletCustomElement);
-
-      _export('default', LayerFactory = function () {
-        function LayerFactory(Leaflet) {
-          
-
-          this.L = Leaflet;
-        }
-
-        LayerFactory.prototype.getLayer = function getLayer(layer) {
-          if (!layer.hasOwnProperty('type')) {
-            layer.type = 'tile';
-          }
-
-          var instance = void 0;
-
-          switch (layer.type) {
-            case 'marker':
-              instance = this.getMarker(layer);
-              break;
-            case 'popup':
-              instance = this.getPopup(layer);
-              break;
-            case 'tile':
-              instance = this.getTile(layer);
-              break;
-            case 'wms':
-              instance = this.getWMS(layer);
-              break;
-            case 'canvas':
-              instance = this.getCanvas(layer);
-              break;
-            case 'imageOverlay':
-              instance = this.getImageOverlay(layer);
-              break;
-            case 'polyline':
-              instance = this.getPolyline(layer);
-              break;
-            case 'multiPolyline':
-              instance = this.getMultiPolyline(layer);
-              break;
-            case 'polygone':
-              instance = this.getPolygone(layer);
-              break;
-            case 'multiPolygone':
-              instance = this.getMultiPolygone(layer);
-              break;
-            case 'rectangle':
-              instance = this.getRectangle(layer);
-              break;
-            case 'circle':
-              instance = this.getCircle(layer);
-              break;
-            case 'circleMarker':
-              instance = this.getCircleMarker(layer);
-              break;
-            case 'group':
-              instance = this.getLayerGroup(layer);
-              break;
-            case 'featureGroup':
-              instance = this.getFeatureGroup(layer);
-              break;
-            case 'geoJSON':
-              instance = this.getGeoJson(layer);
-              break;
-            default:
-              throw new AureliaLeafletException('Layer type ' + layer.type + ' not implemented');
-          }
-
-          if (typeof layer.initCallback === 'function') {
-            layer.initCallback(instance);
-          }
-
-          if (layer.hasOwnProperty('events')) {
-            for (var _iterator7 = layer.events, _isArray7 = Array.isArray(_iterator7), _i7 = 0, _iterator7 = _isArray7 ? _iterator7 : _iterator7[Symbol.iterator]();;) {
-              var _ref7;
-
-              if (_isArray7) {
-                if (_i7 >= _iterator7.length) break;
-                _ref7 = _iterator7[_i7++];
-              } else {
-                _i7 = _iterator7.next();
-                if (_i7.done) break;
-                _ref7 = _i7.value;
-              }
-
-              var e = _ref7;
-
-              if (typeof instance.on === 'function') {
-                instance.on(e.name, e.callback);
-              }
-            }
-          }
-
-          return instance;
-        };
-
-        LayerFactory.prototype.getMarker = function getMarker(layer) {
-          if (!layer.hasOwnProperty('latLng')) {
-            throw new AureliaLeafletException('No latLng given for layer.type "marker"');
-          }
-          var marker = this.L.marker(layer.latLng, layer.options);
-          if (layer.hasOwnProperty('popupContent')) {
-            marker.bindPopup(layer.popupContent).openPopup();
-          }
-          return marker;
-        };
-
-        LayerFactory.prototype.getPopup = function getPopup(layer) {
-          var popup = this.L.popup(layer.options);
-          if (layer.hasOwnProperty('content')) {
-            popup.setContent(layer.content);
-          }
-          if (layer.hasOwnProperty('latLng')) {
-            popup.setLatLng(layer.latLng);
-          }
-          return popup;
-        };
-
-        LayerFactory.prototype.getTile = function getTile(layer) {
-          if (!layer.hasOwnProperty('url')) {
-            throw new AureliaLeafletException('No url given for layer.type "tile"');
-          }
-          return this.L.tileLayer(layer.url, layer.options);
-        };
-
-        LayerFactory.prototype.getWMS = function getWMS(layer) {
-          if (!layer.hasOwnProperty('url')) {
-            throw new AureliaLeafletException('No url given for layer.type "wms"');
-          }
-          return this.L.tileLayer.wms(layer.url, layer.options);
-        };
-
-        LayerFactory.prototype.getCanvas = function getCanvas(layer) {
-          var l = this.L.tileLayer.canvas(layer.options);
-          if (layer.hasOwnProperty('drawTile')) {
-            l.drawTile = layer.drawTile;
-          }
-          if (layer.hasOwnProperty('tileDrawn')) {
-            l.tileDrawn = layer.tileDrawn;
-          }
-          return l;
-        };
-
-        LayerFactory.prototype.getImageOverlay = function getImageOverlay(layer) {
-          if (!layer.hasOwnProperty('url')) {
-            throw new AureliaLeafletException('No url given for layer.type "imageOverlay"');
-          }
-          if (!layer.hasOwnProperty('imageBounds')) {
-            throw new AureliaLeafletException('No imageBounds given for layer.type "imageOverlay"');
-          }
-          return this.L.imageOverlay(layer.url, layer.imageBounds, layer.options);
-        };
-
-        LayerFactory.prototype.getPolyline = function getPolyline(layer) {
-          if (!layer.hasOwnProperty('latLngs')) {
-            throw new AureliaLeafletException('No latLngs given for layer.type "polyline"');
-          }
-          return this.L.polyline(layer.latlngs, layer.options);
-        };
-
-        LayerFactory.prototype.getMultiPolyline = function getMultiPolyline(layer) {
-          if (!layer.hasOwnProperty('latLngs')) {
-            throw new AureliaLeafletException('No latLngs given for layer.type "multiPolyline"');
-          }
-          return this.L.multiPolyline(layer.latlngs, layer.options);
-        };
-
-        LayerFactory.prototype.getPolygone = function getPolygone(layer) {
-          if (!layer.hasOwnProperty('latLngs')) {
-            throw new AureliaLeafletException('No latLngs given for layer.type "polygone"');
-          }
-          return this.L.polygone(layer.latlngs, layer.options);
-        };
-
-        LayerFactory.prototype.getMultiPolygone = function getMultiPolygone(layer) {
-          if (!layer.hasOwnProperty('latLngs')) {
-            throw new AureliaLeafletException('No latLngs given for layer.type "multiPolygone"');
-          }
-          return this.L.multiPolygone(layer.latlngs, layer.options);
-        };
-
-        LayerFactory.prototype.getRectangle = function getRectangle(layer) {
-          if (!layer.hasOwnProperty('bounds')) {
-            throw new AureliaLeafletException('No bounds given for layer.type "rectangle"');
-          }
-          return this.L.rectangle(layer.bounds, layer.options);
-        };
-
-        LayerFactory.prototype.getCircle = function getCircle(layer) {
-          if (!layer.hasOwnProperty('latLng')) {
-            throw new AureliaLeafletException('No latLng given for layer.type "circle"');
-          }
-          if (!layer.hasOwnProperty('radius')) {
-            throw new AureliaLeafletException('No radius given for layer.type "circle"');
-          }
-          return this.L.circle(layer.latLng, layer.radius, layer.options);
-        };
-
-        LayerFactory.prototype.getCircleMarker = function getCircleMarker(layer) {
-          if (!layer.hasOwnProperty('latLng')) {
-            throw new AureliaLeafletException('No latLng given for layer.type "circleMarker"');
-          }
-          return this.L.circleMarker(layer.latLng, layer.options);
-        };
-
-        LayerFactory.prototype.getLayerGroup = function getLayerGroup(layer) {
-          if (!layer.hasOwnProperty('layers')) {
-            throw new AureliaLeafletException('No layers given for layer.type "group"');
-          }
-          var layers = [];
-          for (var _iterator8 = layer.layers, _isArray8 = Array.isArray(_iterator8), _i8 = 0, _iterator8 = _isArray8 ? _iterator8 : _iterator8[Symbol.iterator]();;) {
-            var _ref8;
-
-            if (_isArray8) {
-              if (_i8 >= _iterator8.length) break;
-              _ref8 = _iterator8[_i8++];
-            } else {
-              _i8 = _iterator8.next();
-              if (_i8.done) break;
-              _ref8 = _i8.value;
-            }
-
-            var l = _ref8;
-
-            layers.push(this.getLayer(l));
-          }
-          return this.L.layerGroup(layers);
-        };
-
-        LayerFactory.prototype.getFeatureGroup = function getFeatureGroup(layer) {
-          if (!layer.hasOwnProperty('layers')) {
-            throw new AureliaLeafletException('No layers given for layer.type "featureGroup"');
-          }
-          var layers = [];
-          for (var _iterator9 = layer.layers, _isArray9 = Array.isArray(_iterator9), _i9 = 0, _iterator9 = _isArray9 ? _iterator9 : _iterator9[Symbol.iterator]();;) {
-            var _ref9;
-
-            if (_isArray9) {
-              if (_i9 >= _iterator9.length) break;
-              _ref9 = _iterator9[_i9++];
-            } else {
-              _i9 = _iterator9.next();
-              if (_i9.done) break;
-              _ref9 = _i9.value;
-            }
-
-            var l = _ref9;
-
-            layers.push(this.getLayer(l));
-          }
-          return this.L.featureGroup(layers);
-        };
-
-        LayerFactory.prototype.getGeoJson = function getGeoJson(layer) {
-          if (!layer.hasOwnProperty('data')) {
-            throw new AureliaLeafletException('No data property given for layer.type "geoJSON"');
-          }
-          return this.L.geoJson(layer.data, layer.options);
-        };
-
-        return LayerFactory;
-      }());
-
-      _export('default', LayerFactory);
     }
   };
 });

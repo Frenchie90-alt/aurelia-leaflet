@@ -63,7 +63,7 @@ function gulpFileFromString(filename, string) {
 
 function srcForBabel() {
   return merge(
-    gulp.src(paths.output + jsName),
+    gulp.src(paths.source),
     gulpFileFromString(paths.output + 'index.js', "export * from './" + paths.packageName + "';")
   );
 }

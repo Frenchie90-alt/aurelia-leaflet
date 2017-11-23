@@ -7,14 +7,18 @@ import {
   EventAggregator
 } from 'aurelia-event-aggregator';
 import {
+  AureliaLeafletException
+} from './aurelia-leaflet-exceptions';
+import {
+  defaultMapOptions,
+  defaultLayers
+} from './leaflet-defaults';
+import {
+  LayerFactory
+} from './helpers/layer-factory';
+import {
   Leaflet
 } from 'leaflet';
-export declare class AureliaLeafletException {
-  name: any;
-  constructor(message?: any);
-}
-export declare var defaultMapOptions: any;
-export declare var defaultLayers: any;
 export declare class LeafletCustomElement {
   static inject: any;
   layers: any;
@@ -35,6 +39,3 @@ export declare class LeafletCustomElement {
   removeOldLayers(oldLayers?: any, type?: any): any;
   getLayerId(layer?: any): any;
 }
-export declare {
-  LayerFactory as default
-};
