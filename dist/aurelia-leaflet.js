@@ -32,7 +32,7 @@ export var defaultLayers = {
   overlay: []
 };
 
-@customElement('leafletYYY')
+@customElement('leaflet')
 @useView('./leaflet.html')
 @inject(Leaflet, EventAggregator, Element)
 export class LeafletCustomElement {

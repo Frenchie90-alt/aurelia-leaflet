@@ -5,7 +5,7 @@ import {defaultMapOptions, defaultLayers} from './leaflet-defaults';
 import {LayerFactory} from './helpers/layer-factory';
 import {Leaflet} from 'leaflet';
 
-@customElement('leafletYYY')
+@customElement('leaflet')
 @useView('./leaflet.html')
 @inject(Leaflet, EventAggregator, Element)
 export class LeafletCustomElement {

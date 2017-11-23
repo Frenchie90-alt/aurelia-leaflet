@@ -52,7 +52,7 @@ import { defaultMapOptions, defaultLayers } from './leaflet-defaults';
 import { LayerFactory } from './helpers/layer-factory';
 import { Leaflet } from 'leaflet';
 
-export var LeafletCustomElement = (_dec = customElement('leafletYYY'), _dec2 = useView('./leaflet.html'), _dec3 = inject(Leaflet, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+export var LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec3 = inject(Leaflet, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
   function LeafletCustomElement(leaflet, eventAggregator, element) {
     var _this = this;
 
