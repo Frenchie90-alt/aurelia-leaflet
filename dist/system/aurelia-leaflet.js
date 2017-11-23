@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['aurelia-pal'], function (_export, _context) {
+System.register(['aurelia-pal', './leaflet'], function (_export, _context) {
     "use strict";
 
-    var PLATFORM;
+    var PLATFORM, LeafletCustomElement;
     function configure(frameworkConfig) {
         frameworkConfig.globalResources(PLATFORM.moduleName('./leaflet'));
     }
@@ -13,7 +13,11 @@ System.register(['aurelia-pal'], function (_export, _context) {
     return {
         setters: [function (_aureliaPal) {
             PLATFORM = _aureliaPal.PLATFORM;
+        }, function (_leaflet) {
+            LeafletCustomElement = _leaflet.LeafletCustomElement;
         }],
-        execute: function () {}
+        execute: function () {
+            _export('LeafletCustomElement', LeafletCustomElement);
+        }
     };
 });
