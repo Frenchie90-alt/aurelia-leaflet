@@ -18,7 +18,7 @@ import {
   LayerFactory
 } from './helpers/layer-factory';
 import {
-  Leaflet
+  L
 } from 'leaflet';
 export declare class LeafletCustomElement {
   layers: any;

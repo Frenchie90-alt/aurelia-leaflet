@@ -3,7 +3,7 @@
 System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-leaflet-exceptions', './leaflet-defaults', './helpers/layer-factory', 'leaflet'], function (_export, _context) {
   "use strict";
 
-  var inject, customElement, useView, bindable, EventAggregator, AureliaLeafletException, defaultMapOptions, defaultLayers, LayerFactory, Leaflet, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, LeafletCustomElement;
+  var inject, customElement, useView, bindable, EventAggregator, AureliaLeafletException, defaultMapOptions, defaultLayers, LayerFactory, L, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, LeafletCustomElement;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -66,10 +66,10 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
     }, function (_helpersLayerFactory) {
       LayerFactory = _helpersLayerFactory.LayerFactory;
     }, function (_leaflet) {
-      Leaflet = _leaflet.Leaflet;
+      L = _leaflet.L;
     }],
     execute: function () {
-      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('a-leaflet'), _dec2 = useView('./leaflet.html'), _dec3 = inject(Leaflet, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec3 = inject(L, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
         function LeafletCustomElement(leaflet, eventAggregator, element) {
           var _this = this;
 

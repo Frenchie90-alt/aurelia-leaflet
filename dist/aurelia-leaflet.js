@@ -1,6 +1,6 @@
 import {inject,customElement,useView,bindable} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
-import {Leaflet} from 'leaflet';
+import {L} from 'leaflet';
 
 export class AureliaLeafletException {
   name = 'AureliaLeafletException';
@@ -32,9 +32,9 @@ export var defaultLayers = {
   overlay: []
 };
 
-@customElement('a-leaflet')
+@customElement('leaflet')
 @useView('./leaflet.html')
-@inject(Leaflet, EventAggregator, Element)
+@inject(L, EventAggregator, Element)
 export class LeafletCustomElement {
 //  static inject = [Leaflet, EventAggregator, Element];
 
