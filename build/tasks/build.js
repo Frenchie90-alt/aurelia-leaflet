@@ -105,10 +105,21 @@ gulp.task('build-dts', function() {
     .pipe(gulp.dest(paths.output));
 });
 
+gulp.task('copy-html', function() {
+ return gulp.src(paths.html)
+  .pipe(gulp.dest(paths.output + 'es2015'))
+  .pipe(gulp.dest(paths.output + 'commonjs'))
+  .pipe(gulp.dest(paths.output + 'amd'))
+  .pipe(gulp.dest(paths.output + 'native-modules'))
+  .pipe(gulp.dest(paths.output + 'system'));
+
+});
+
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
     'build-index',
+    'copy-html',
     compileToModules
       .map(function(moduleType) { return 'build-babel-' + moduleType })
       .concat(paths.useTypeScriptForDTS ? ['build-dts'] : []),
@@ -120,6 +131,7 @@ gulp.task('build-ts', function(callback) {
   return runSequence(
     'clean',
     'build-index',
+    'copy-html',
     'build-babel-native-modules',
     compileToModules
       .filter(function(moduleType) { return moduleType !== 'native-modules' })
