@@ -1,6 +1,6 @@
+import * as Leaflet from 'leaflet';
 import {inject,customElement,useView,bindable} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
-import {Leaflet} from 'leaflet';
 
 export class AureliaLeafletException {
   name = 'AureliaLeafletException';

@@ -50,7 +50,7 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 import { AureliaLeafletException } from './aurelia-leaflet-exceptions';
 import { defaultMapOptions, defaultLayers } from './leaflet-defaults';
 import { LayerFactory } from './helpers/layer-factory';
-import { Leaflet } from 'leaflet';
+import * as Leaflet from 'leaflet';
 
 export var LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec3 = inject(EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
   function LeafletCustomElement(eventAggregator, element) {

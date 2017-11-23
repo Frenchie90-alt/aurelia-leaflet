@@ -19,6 +19,10 @@ var _layerFactory = require('./helpers/layer-factory');
 
 var _leaflet = require('leaflet');
 
+var Leaflet = _interopRequireWildcard(_leaflet);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
   Object.defineProperty(target, property, {
@@ -85,7 +89,7 @@ var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFr
       overlay: {}
     };
 
-    this.L = _leaflet.Leaflet;
+    this.L = Leaflet;
     this.eventAggregator = eventAggregator;
     this.element = element;
 

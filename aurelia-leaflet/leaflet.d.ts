@@ -17,9 +17,7 @@ import {
 import {
   LayerFactory
 } from './helpers/layer-factory';
-import {
-  Leaflet
-} from 'leaflet';
+import * as Leaflet from 'leaflet';
 
 //@inject(L.L, EventAggregator, Element)
 export declare class LeafletCustomElement {
