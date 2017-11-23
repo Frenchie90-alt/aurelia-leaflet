@@ -20,6 +20,7 @@ import {
   Leaflet
 } from 'leaflet';
 export declare class LeafletCustomElement {
+  static inject: any;
   layers: any;
   mapEvents: any;
   mapOptions: any;

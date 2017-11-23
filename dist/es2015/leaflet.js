@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class3, _temp;
 
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
@@ -50,7 +50,7 @@ import { defaultMapOptions, defaultLayers } from './leaflet-defaults';
 import { LayerFactory } from './helpers/layer-factory';
 import { Leaflet } from 'leaflet';
 
-export let LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = class LeafletCustomElement {
+export let LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = (_temp = _class3 = class LeafletCustomElement {
 
   constructor(leaflet, eventAggregator, element) {
     _initDefineProp(this, 'layers', _descriptor, this);
@@ -255,7 +255,7 @@ export let LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useV
     return id;
   }
 
-}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
+}, _class3.inject = [Leaflet, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
   enumerable: true,
   initializer: null
 }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [bindable], {
