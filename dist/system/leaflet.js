@@ -379,7 +379,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
         };
 
         return LeafletCustomElement;
-      }(), _class3.inject = [Leaflet, Element, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
+      }(), _class3.inject = [Element, EventAggregator, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
         enumerable: true,
         initializer: null
       }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [bindable], {
