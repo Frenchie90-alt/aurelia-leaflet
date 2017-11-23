@@ -12,7 +12,7 @@ System.register(['../aurelia-leaflet-exceptions'], function (_export, _context) 
       AureliaLeafletException = _aureliaLeafletExceptions.AureliaLeafletException;
     }],
     execute: function () {
-      _export('default', LayerFactory = function () {
+      _export('LayerFactory', LayerFactory = function () {
         function LayerFactory(Leaflet) {
           
 
@@ -274,7 +274,7 @@ System.register(['../aurelia-leaflet-exceptions'], function (_export, _context) 
         return LayerFactory;
       }());
 
-      _export('default', LayerFactory);
+      _export('LayerFactory', LayerFactory);
     }
   };
 });

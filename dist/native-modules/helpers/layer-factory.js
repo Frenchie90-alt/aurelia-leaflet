@@ -2,7 +2,7 @@
 
 import { AureliaLeafletException } from '../aurelia-leaflet-exceptions';
 
-var LayerFactory = function () {
+export var LayerFactory = function () {
   function LayerFactory(Leaflet) {
     
 
@@ -263,5 +263,3 @@ var LayerFactory = function () {
 
   return LayerFactory;
 }();
-
-export { LayerFactory as default };

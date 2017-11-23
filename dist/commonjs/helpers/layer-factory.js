@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = undefined;
+exports.LayerFactory = undefined;
 
 var _aureliaLeafletExceptions = require('../aurelia-leaflet-exceptions');
 
 
 
-var LayerFactory = function () {
+var LayerFactory = exports.LayerFactory = function () {
   function LayerFactory(Leaflet) {
     
 
@@ -270,5 +270,3 @@ var LayerFactory = function () {
 
   return LayerFactory;
 }();
-
-exports.default = LayerFactory;

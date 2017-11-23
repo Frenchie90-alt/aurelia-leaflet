@@ -4,11 +4,11 @@ define(['exports', '../aurelia-leaflet-exceptions'], function (exports, _aurelia
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = undefined;
+  exports.LayerFactory = undefined;
 
   
 
-  var LayerFactory = function () {
+  var LayerFactory = exports.LayerFactory = function () {
     function LayerFactory(Leaflet) {
       
 
@@ -269,6 +269,4 @@ define(['exports', '../aurelia-leaflet-exceptions'], function (exports, _aurelia
 
     return LayerFactory;
   }();
-
-  exports.default = LayerFactory;
 });

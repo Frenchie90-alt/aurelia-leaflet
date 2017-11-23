@@ -245,7 +245,8 @@ export class LeafletCustomElement {
 
 }
 
-export default class LayerFactory {
+//export default class LayerFactory {
+export class LayerFactory {
 
   constructor(Leaflet) {
     this.L = Leaflet;
