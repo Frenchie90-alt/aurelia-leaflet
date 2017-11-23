@@ -7,10 +7,8 @@ import * as Leaflet from 'leaflet';
 
 @customElement('leaflet')
 @useView('./leaflet.html')
-//@inject(L.L, EventAggregator, Element)
-@inject(EventAggregator, Element)
 export class LeafletCustomElement {
-//  static inject = [Leaflet, EventAggregator, Element];
+  static inject = [EventAggregator, Element];
 
   @bindable layers;
   @bindable mapEvents;

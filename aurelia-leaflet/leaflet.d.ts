@@ -18,9 +18,8 @@ import {
   LayerFactory
 } from './helpers/layer-factory';
 import * as Leaflet from 'leaflet';
-
-//@inject(L.L, EventAggregator, Element)
 export declare class LeafletCustomElement {
+  static inject: any;
   layers: any;
   mapEvents: any;
   mapOptions: any;

@@ -1,8 +1,6 @@
 import {
   AureliaLeafletException
 } from '../aurelia-leaflet-exceptions';
-
-//export default class LayerFactory {
 export declare class LayerFactory {
   constructor(Leaflet?: any);
   getLayer(layer?: any): any;
