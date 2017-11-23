@@ -375,7 +375,7 @@ var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFr
   };
 
   return LeafletCustomElement;
-}(), _class3.inject = [Element, _aureliaEventAggregator.EventAggregator, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [_aureliaFramework.bindable], {
+}(), _class3.inject = [_leaflet.Leaflet, Element, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [_aureliaFramework.bindable], {
   enumerable: true,
   initializer: null
 }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [_aureliaFramework.bindable], {
