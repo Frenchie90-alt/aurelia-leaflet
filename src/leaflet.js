@@ -1,4 +1,4 @@
-import {customElement, useView, bindable} from 'aurelia-framework';
+import {inject, customElement, useView, bindable} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
 import {AureliaLeafletException} from './aurelia-leaflet-exceptions';
 import {defaultMapOptions, defaultLayers} from './leaflet-defaults';
@@ -7,8 +7,9 @@ import {Leaflet} from 'leaflet';
 
 @customElement('leaflet')
 @useView('./leaflet.html')
+@inject(Leaflet, EventAggregator, Element)
 export class LeafletCustomElement {
-  static inject = [Leaflet, EventAggregator, Element];
+//  static inject = [Leaflet, EventAggregator, Element];
 
   @bindable layers;
   @bindable mapEvents;
@@ -23,10 +24,10 @@ export class LeafletCustomElement {
     overlay: {}
   }
 
-  constructor(Leaflet, EventAggregator, Element) {
-    this.L               = Leaflet;
-    this.eventAggregator = EventAggregator;
-    this.element         = Element;
+  constructor(leaflet, eventAggregator, element) {
+    this.L               = leaflet;
+    this.eventAggregator = eventAggregator;
+    this.element         = element;
 
     this.layerFactory = new LayerFactory(this.L);
 
