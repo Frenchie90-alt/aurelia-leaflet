@@ -17,7 +17,7 @@
   "directories": {
     "lib": "dist/system"
   },
-  "main": "dist/commonjs/index.js",
+  "main": "dist/commonjs/aurelia-leaflet.js",
   "repository": {
     "type": "git",
     "url": "http://github.com/benib/aurelia-leaflet"

@@ -23,7 +23,7 @@ var paths = {
   sort: false
 };
 
-paths.ignore = ['index.js'];
+paths.ignore = ['aurelia-leaflet.js'];
 paths.files = [
   paths.source
 ];
