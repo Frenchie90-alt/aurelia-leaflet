@@ -363,7 +363,7 @@ export var LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useV
   };
 
   return LeafletCustomElement;
-}(), _class3.inject = [Leaflet, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
+}(), _class3.inject = [Element, EventAggregator, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
   enumerable: true,
   initializer: null
 }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [bindable], {
