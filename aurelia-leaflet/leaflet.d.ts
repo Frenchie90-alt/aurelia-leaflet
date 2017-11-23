@@ -1,4 +1,5 @@
 import {
+  inject,
   customElement,
   useView,
   bindable
@@ -20,7 +21,6 @@ import {
   Leaflet
 } from 'leaflet';
 export declare class LeafletCustomElement {
-  static inject: any;
   layers: any;
   mapEvents: any;
   mapOptions: any;
@@ -28,7 +28,7 @@ export declare class LeafletCustomElement {
   withScaleControl: any;
   map: any;
   attachedLayers: any;
-  constructor(Leaflet?: any, EventAggregator?: any, Element?: any);
+  constructor(leaflet?: any, eventAggregator?: any, element?: any);
   layersChanged(newLayers?: any, oldLayers?: any): any;
   mapOptionsChanged(newOptions?: any, oldOptions?: any): any;
   mapEventsChanged(newEvents?: any, oldEvents?: any): any;

@@ -3,7 +3,7 @@
 System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-leaflet-exceptions', './leaflet-defaults', './helpers/layer-factory', 'leaflet'], function (_export, _context) {
   "use strict";
 
-  var customElement, useView, bindable, EventAggregator, AureliaLeafletException, defaultMapOptions, defaultLayers, LayerFactory, Leaflet, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class3, _temp, _initialiseProps, LeafletCustomElement;
+  var inject, customElement, useView, bindable, EventAggregator, AureliaLeafletException, defaultMapOptions, defaultLayers, LayerFactory, Leaflet, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, LeafletCustomElement;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -52,6 +52,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
 
   return {
     setters: [function (_aureliaFramework) {
+      inject = _aureliaFramework.inject;
       customElement = _aureliaFramework.customElement;
       useView = _aureliaFramework.useView;
       bindable = _aureliaFramework.bindable;
@@ -68,17 +69,30 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
       Leaflet = _leaflet.Leaflet;
     }],
     execute: function () {
-      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = (_temp = _class3 = function () {
-        function LeafletCustomElement(Leaflet, EventAggregator, Element) {
+      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leafletYYY'), _dec2 = useView('./leaflet.html'), _dec3 = inject(Leaflet, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+        function LeafletCustomElement(leaflet, eventAggregator, element) {
           var _this = this;
 
           
 
-          _initialiseProps.call(this);
+          _initDefineProp(this, 'layers', _descriptor, this);
 
-          this.L = Leaflet;
-          this.eventAggregator = EventAggregator;
-          this.element = Element;
+          _initDefineProp(this, 'mapEvents', _descriptor2, this);
+
+          _initDefineProp(this, 'mapOptions', _descriptor3, this);
+
+          _initDefineProp(this, 'withLayerControl', _descriptor4, this);
+
+          _initDefineProp(this, 'withScaleControl', _descriptor5, this);
+
+          this.attachedLayers = {
+            base: {},
+            overlay: {}
+          };
+
+          this.L = leaflet;
+          this.eventAggregator = eventAggregator;
+          this.element = element;
 
           this.layerFactory = new LayerFactory(this.L);
 
@@ -366,22 +380,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
         };
 
         return LeafletCustomElement;
-      }(), _class3.inject = [Leaflet, EventAggregator, Element], _initialiseProps = function _initialiseProps() {
-        _initDefineProp(this, 'layers', _descriptor, this);
-
-        _initDefineProp(this, 'mapEvents', _descriptor2, this);
-
-        _initDefineProp(this, 'mapOptions', _descriptor3, this);
-
-        _initDefineProp(this, 'withLayerControl', _descriptor4, this);
-
-        _initDefineProp(this, 'withScaleControl', _descriptor5, this);
-
-        this.attachedLayers = {
-          base: {},
-          overlay: {}
-        };
-      }, _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
+      }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
         enumerable: true,
         initializer: null
       }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [bindable], {
@@ -396,7 +395,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
       }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, 'withScaleControl', [bindable], {
         enumerable: true,
         initializer: null
-      })), _class2)) || _class) || _class));
+      })), _class2)) || _class) || _class) || _class));
 
       _export('LeafletCustomElement', LeafletCustomElement);
     }

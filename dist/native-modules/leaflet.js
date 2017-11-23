@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class3, _temp, _initialiseProps;
+var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
 
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
@@ -45,24 +45,37 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { customElement, useView, bindable } from 'aurelia-framework';
+import { inject, customElement, useView, bindable } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { AureliaLeafletException } from './aurelia-leaflet-exceptions';
 import { defaultMapOptions, defaultLayers } from './leaflet-defaults';
 import { LayerFactory } from './helpers/layer-factory';
 import { Leaflet } from 'leaflet';
 
-export var LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = (_temp = _class3 = function () {
-  function LeafletCustomElement(Leaflet, EventAggregator, Element) {
+export var LeafletCustomElement = (_dec = customElement('leafletYYY'), _dec2 = useView('./leaflet.html'), _dec3 = inject(Leaflet, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+  function LeafletCustomElement(leaflet, eventAggregator, element) {
     var _this = this;
 
     
 
-    _initialiseProps.call(this);
+    _initDefineProp(this, 'layers', _descriptor, this);
 
-    this.L = Leaflet;
-    this.eventAggregator = EventAggregator;
-    this.element = Element;
+    _initDefineProp(this, 'mapEvents', _descriptor2, this);
+
+    _initDefineProp(this, 'mapOptions', _descriptor3, this);
+
+    _initDefineProp(this, 'withLayerControl', _descriptor4, this);
+
+    _initDefineProp(this, 'withScaleControl', _descriptor5, this);
+
+    this.attachedLayers = {
+      base: {},
+      overlay: {}
+    };
+
+    this.L = leaflet;
+    this.eventAggregator = eventAggregator;
+    this.element = element;
 
     this.layerFactory = new LayerFactory(this.L);
 
@@ -350,22 +363,7 @@ export var LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useV
   };
 
   return LeafletCustomElement;
-}(), _class3.inject = [Leaflet, EventAggregator, Element], _initialiseProps = function _initialiseProps() {
-  _initDefineProp(this, 'layers', _descriptor, this);
-
-  _initDefineProp(this, 'mapEvents', _descriptor2, this);
-
-  _initDefineProp(this, 'mapOptions', _descriptor3, this);
-
-  _initDefineProp(this, 'withLayerControl', _descriptor4, this);
-
-  _initDefineProp(this, 'withScaleControl', _descriptor5, this);
-
-  this.attachedLayers = {
-    base: {},
-    overlay: {}
-  };
-}, _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
+}(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
   enumerable: true,
   initializer: null
 }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [bindable], {
@@ -380,4 +378,4 @@ export var LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useV
 }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, 'withScaleControl', [bindable], {
   enumerable: true,
   initializer: null
-})), _class2)) || _class) || _class);
+})), _class2)) || _class) || _class) || _class);
