@@ -53,8 +53,8 @@ define(['exports', 'aurelia-framework', 'aurelia-event-aggregator', './aurelia-l
 
   var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
 
-  var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFramework.customElement)('leaflet'), _dec2 = (0, _aureliaFramework.useView)('./leaflet.html'), _dec3 = (0, _aureliaFramework.inject)(_leaflet.L.L, _aureliaEventAggregator.EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
-    function LeafletCustomElement(leaflet, eventAggregator, element) {
+  var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFramework.customElement)('leaflet'), _dec2 = (0, _aureliaFramework.useView)('./leaflet.html'), _dec3 = (0, _aureliaFramework.inject)(_aureliaEventAggregator.EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+    function LeafletCustomElement(eventAggregator, element) {
       var _this = this;
 
       
@@ -74,7 +74,7 @@ define(['exports', 'aurelia-framework', 'aurelia-event-aggregator', './aurelia-l
         overlay: {}
       };
 
-      this.L = leaflet;
+      this.L = _leaflet.Leaflet;
       this.eventAggregator = eventAggregator;
       this.element = element;
 

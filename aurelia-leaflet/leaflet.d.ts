@@ -18,8 +18,10 @@ import {
   LayerFactory
 } from './helpers/layer-factory';
 import {
-  L
+  Leaflet
 } from 'leaflet';
+
+//@inject(L.L, EventAggregator, Element)
 export declare class LeafletCustomElement {
   layers: any;
   mapEvents: any;
@@ -28,7 +30,7 @@ export declare class LeafletCustomElement {
   withScaleControl: any;
   map: any;
   attachedLayers: any;
-  constructor(leaflet?: any, eventAggregator?: any, element?: any);
+  constructor(eventAggregator?: any, element?: any);
   layersChanged(newLayers?: any, oldLayers?: any): any;
   mapOptionsChanged(newOptions?: any, oldOptions?: any): any;
   mapEventsChanged(newEvents?: any, oldEvents?: any): any;

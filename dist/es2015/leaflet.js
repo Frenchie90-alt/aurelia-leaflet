@@ -48,11 +48,11 @@ import { EventAggregator } from 'aurelia-event-aggregator';
 import { AureliaLeafletException } from './aurelia-leaflet-exceptions';
 import { defaultMapOptions, defaultLayers } from './leaflet-defaults';
 import { LayerFactory } from './helpers/layer-factory';
-import { L } from 'leaflet';
+import { Leaflet } from 'leaflet';
 
-export let LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec3 = inject(L.L, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class LeafletCustomElement {
+export let LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec3 = inject(EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class LeafletCustomElement {
 
-  constructor(leaflet, eventAggregator, element) {
+  constructor(eventAggregator, element) {
     _initDefineProp(this, 'layers', _descriptor, this);
 
     _initDefineProp(this, 'mapEvents', _descriptor2, this);
@@ -68,7 +68,7 @@ export let LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useV
       overlay: {}
     };
 
-    this.L = leaflet;
+    this.L = Leaflet;
     this.eventAggregator = eventAggregator;
     this.element = element;
 
