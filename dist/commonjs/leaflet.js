@@ -64,7 +64,7 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFramework.customElement)('leaflet'), _dec2 = (0, _aureliaFramework.useView)('./leaflet.html'), _dec3 = (0, _aureliaFramework.inject)(_leaflet.L, _aureliaEventAggregator.EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFramework.customElement)('leaflet'), _dec2 = (0, _aureliaFramework.useView)('./leaflet.html'), _dec3 = (0, _aureliaFramework.inject)(_leaflet.L.L, _aureliaEventAggregator.EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
   function LeafletCustomElement(leaflet, eventAggregator, element) {
     var _this = this;
 

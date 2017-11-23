@@ -7,7 +7,7 @@ import {L} from 'leaflet';
 
 @customElement('leaflet')
 @useView('./leaflet.html')
-@inject(L, EventAggregator, Element)
+@inject(L.L, EventAggregator, Element)
 export class LeafletCustomElement {
 //  static inject = [Leaflet, EventAggregator, Element];
 

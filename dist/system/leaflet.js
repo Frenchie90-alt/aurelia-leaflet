@@ -69,7 +69,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
       L = _leaflet.L;
     }],
     execute: function () {
-      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec3 = inject(L, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec3 = inject(L.L, EventAggregator, Element), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
         function LeafletCustomElement(leaflet, eventAggregator, element) {
           var _this = this;
 
