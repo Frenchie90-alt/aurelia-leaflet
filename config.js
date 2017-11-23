@@ -11,8 +11,10 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   map: {
     "aurelia-event-aggregator": "npm:aurelia-event-aggregator@1.0.1",
+    "aurelia-pal": "npm:aurelia-pal@1.4.0",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",

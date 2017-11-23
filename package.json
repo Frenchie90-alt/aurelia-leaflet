@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "aurelia-event-aggregator": "^1.0.1",
+    "aurelia-pal": "^1.4.0",
     "leaflet": "^1.2.0"
   },
   "devDependencies": {
@@ -66,6 +67,7 @@
     },
     "dependencies": {
       "aurelia-event-aggregator": "npm:aurelia-event-aggregator@^1.0.1",
+      "aurelia-pal": "npm:aurelia-pal@^1.4.0",
       "leaflet": "npm:leaflet@^1.2.0"
     },
     "devDependencies": {
@@ -79,8 +81,7 @@
       "articles": []
     },
     "build": {
-      "resources": [
-      ]
+      "resources": []
     }
   }
 }
