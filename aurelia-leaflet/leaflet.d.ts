@@ -28,7 +28,7 @@ export declare class LeafletCustomElement {
   withScaleControl: any;
   map: any;
   attachedLayers: any;
-  constructor(leaflet?: any, eventAggregator?: any, element?: any);
+  constructor(Leaflet?: any, EventAggregator?: any, Element?: any);
   layersChanged(newLayers?: any, oldLayers?: any): any;
   mapOptionsChanged(newOptions?: any, oldOptions?: any): any;
   mapEventsChanged(newEvents?: any, oldEvents?: any): any;
