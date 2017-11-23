@@ -35,7 +35,7 @@ export var defaultLayers = {
 @customElement('leaflet')
 @useView('./leaflet.html')
 export class LeafletCustomElement {
-  static inject = [Leaflet, EventAggregator, Element];
+//  static inject = [Leaflet, EventAggregator, Element];
 
   @bindable layers;
   @bindable mapEvents;

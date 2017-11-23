@@ -3,7 +3,7 @@
 System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-leaflet-exceptions', './leaflet-defaults', './helpers/layer-factory', 'leaflet'], function (_export, _context) {
   "use strict";
 
-  var customElement, useView, bindable, EventAggregator, AureliaLeafletException, defaultMapOptions, defaultLayers, LayerFactory, Leaflet, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class3, _temp, LeafletCustomElement;
+  var customElement, useView, bindable, EventAggregator, AureliaLeafletException, defaultMapOptions, defaultLayers, LayerFactory, Leaflet, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, LeafletCustomElement;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -68,7 +68,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
       Leaflet = _leaflet.Leaflet;
     }],
     execute: function () {
-      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = (_temp = _class3 = function () {
+      _export('LeafletCustomElement', LeafletCustomElement = (_dec = customElement('leaflet'), _dec2 = useView('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = function () {
         function LeafletCustomElement(leaflet, eventAggregator, element) {
           var _this = this;
 
@@ -379,7 +379,7 @@ System.register(['aurelia-framework', 'aurelia-event-aggregator', './aurelia-lea
         };
 
         return LeafletCustomElement;
-      }(), _class3.inject = [Leaflet, EventAggregator, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
+      }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [bindable], {
         enumerable: true,
         initializer: null
       }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [bindable], {

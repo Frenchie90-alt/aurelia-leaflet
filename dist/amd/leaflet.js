@@ -51,9 +51,9 @@ define(['exports', 'aurelia-framework', 'aurelia-event-aggregator', './aurelia-l
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
   }
 
-  var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _class3, _temp;
+  var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
 
-  var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFramework.customElement)('leaflet'), _dec2 = (0, _aureliaFramework.useView)('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = (_temp = _class3 = function () {
+  var LeafletCustomElement = exports.LeafletCustomElement = (_dec = (0, _aureliaFramework.customElement)('leaflet'), _dec2 = (0, _aureliaFramework.useView)('./leaflet.html'), _dec(_class = _dec2(_class = (_class2 = function () {
     function LeafletCustomElement(leaflet, eventAggregator, element) {
       var _this = this;
 
@@ -364,7 +364,7 @@ define(['exports', 'aurelia-framework', 'aurelia-event-aggregator', './aurelia-l
     };
 
     return LeafletCustomElement;
-  }(), _class3.inject = [_leaflet.Leaflet, _aureliaEventAggregator.EventAggregator, Element], _temp), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [_aureliaFramework.bindable], {
+  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
   }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'mapEvents', [_aureliaFramework.bindable], {
