@@ -2,8 +2,8 @@ import {customElement, useView, bindable} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
 import {AureliaLeafletException} from './aurelia-leaflet-exceptions';
 import {defaultMapOptions, defaultLayers} from './leaflet-defaults';
-import LayerFactory from './helpers/layer-factory';
-import Leaflet from 'leaflet';
+import {LayerFactory} from './helpers/layer-factory';
+import {Leaflet} from 'leaflet';
 
 @customElement('leaflet')
 @useView('./leaflet.html')

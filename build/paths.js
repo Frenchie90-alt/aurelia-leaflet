@@ -25,9 +25,7 @@ var paths = {
 };
 
 paths.files = [
-  'index.js'
-].map(function(file){
-  return paths.root + file;
-});
+  paths.source
+];
 
 module.exports = paths;

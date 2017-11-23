@@ -78,10 +78,17 @@
     "yargs": "^7.0.2"
   },
   "jspm": {
-    "main": "aurelia-leaflet.js",
+    "registry": "npm",
+    "jspmPackage": true,
+    "main": "aurelia-leaflet",
     "format": "amd",
     "directories": {
-      "lib": "dist/amd"
+      "dist": "dist/amd"
+    },
+    "peerDependencies": {
+      "aurelia-event-aggregator": "npm:aurelia-event-aggregator@^1.0.1",
+      "aurelia-pal": "npm:aurelia-pal@^1.4.0",
+      "leaflet": "npm:leaflet@^1.2.0"
     },
     "dependencies": {
       "aurelia-event-aggregator": "npm:aurelia-event-aggregator@^1.0.1",
@@ -91,7 +98,7 @@
     "devDependencies": {
       "babel": "npm:babel-core@^6.18.2",
       "babel-runtime": "npm:babel-runtime@^5.8.20",
-      "core-js": "npm:core-js@^1.1.0"
+      "core-js": "^2.0.3"
     }
   },
   "aurelia": {
