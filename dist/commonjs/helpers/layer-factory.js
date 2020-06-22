@@ -48,7 +48,7 @@ var LayerFactory = exports.LayerFactory = function () {
       case 'multiPolyline':
         instance = this.getMultiPolyline(layer);
         break;
-      case 'polygone':
+      case 'polygon':
         instance = this.getPolygon(layer);
         break;
       case 'multiPolygon':
@@ -177,9 +177,9 @@ var LayerFactory = exports.LayerFactory = function () {
 
   LayerFactory.prototype.getPolygon = function getPolygon(layer) {
     if (!layer.hasOwnProperty('latLngs')) {
-      throw new _aureliaLeafletExceptions.AureliaLeafletException('No latLngs given for layer.type "polygone"');
+      throw new _aureliaLeafletExceptions.AureliaLeafletException('No latLngs given for layer.type "polygon"');
     }
-    return this.L.polygone(layer.latlngs, layer.options);
+    return this.L.polygon(layer.latlngs, layer.options);
   };
 
   LayerFactory.prototype.getMultiPolygon = function getMultiPolygon(layer) {
