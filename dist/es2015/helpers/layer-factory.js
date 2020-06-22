@@ -39,10 +39,10 @@ export let LayerFactory = class LayerFactory {
         instance = this.getMultiPolyline(layer);
         break;
       case 'polygone':
-        instance = this.getPolygone(layer);
+        instance = this.getPolygon(layer);
         break;
-      case 'multiPolygone':
-        instance = this.getMultiPolygone(layer);
+      case 'multiPolygon':
+        instance = this.getMultiPolygon(layer);
         break;
       case 'rectangle':
         instance = this.getRectangle(layer);
@@ -152,18 +152,18 @@ export let LayerFactory = class LayerFactory {
     return this.L.multiPolyline(layer.latlngs, layer.options);
   }
 
-  getPolygone(layer) {
+  getPolygon(layer) {
     if (!layer.hasOwnProperty('latLngs')) {
       throw new AureliaLeafletException('No latLngs given for layer.type "polygone"');
     }
     return this.L.polygone(layer.latlngs, layer.options);
   }
 
-  getMultiPolygone(layer) {
+  getMultiPolygon(layer) {
     if (!layer.hasOwnProperty('latLngs')) {
-      throw new AureliaLeafletException('No latLngs given for layer.type "multiPolygone"');
+      throw new AureliaLeafletException('No latLngs given for layer.type "multiPolygon"');
     }
-    return this.L.multiPolygone(layer.latlngs, layer.options);
+    return this.L.multiPolygon(layer.latlngs, layer.options);
   }
 
   getRectangle(layer) {
