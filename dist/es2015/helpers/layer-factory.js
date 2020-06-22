@@ -38,7 +38,7 @@ export let LayerFactory = class LayerFactory {
       case 'multiPolyline':
         instance = this.getMultiPolyline(layer);
         break;
-      case 'polygone':
+      case 'polygon':
         instance = this.getPolygon(layer);
         break;
       case 'multiPolygon':
@@ -154,9 +154,9 @@ export let LayerFactory = class LayerFactory {
 
   getPolygon(layer) {
     if (!layer.hasOwnProperty('latLngs')) {
-      throw new AureliaLeafletException('No latLngs given for layer.type "polygone"');
+      throw new AureliaLeafletException('No latLngs given for layer.type "polygon"');
     }
-    return this.L.polygone(layer.latlngs, layer.options);
+    return this.L.polygon(layer.latlngs, layer.options);
   }
 
   getMultiPolygon(layer) {
