@@ -47,11 +47,11 @@ define(['exports', '../aurelia-leaflet-exceptions'], function (exports, _aurelia
         case 'multiPolyline':
           instance = this.getMultiPolyline(layer);
           break;
-        case 'polygone':
-          instance = this.getPolygone(layer);
+        case 'polygon':
+          instance = this.getPolygon(layer);
           break;
-        case 'multiPolygone':
-          instance = this.getMultiPolygone(layer);
+        case 'multiPolygon':
+          instance = this.getMultiPolygon(layer);
           break;
         case 'rectangle':
           instance = this.getRectangle(layer);
@@ -174,18 +174,18 @@ define(['exports', '../aurelia-leaflet-exceptions'], function (exports, _aurelia
       return this.L.multiPolyline(layer.latlngs, layer.options);
     };
 
-    LayerFactory.prototype.getPolygone = function getPolygone(layer) {
+    LayerFactory.prototype.getPolygon = function getPolygon(layer) {
       if (!layer.hasOwnProperty('latLngs')) {
-        throw new _aureliaLeafletExceptions.AureliaLeafletException('No latLngs given for layer.type "polygone"');
+        throw new _aureliaLeafletExceptions.AureliaLeafletException('No latLngs given for layer.type "polygon"');
       }
-      return this.L.polygone(layer.latlngs, layer.options);
+      return this.L.polygon(layer.latlngs, layer.options);
     };
 
-    LayerFactory.prototype.getMultiPolygone = function getMultiPolygone(layer) {
+    LayerFactory.prototype.getMultiPolygon = function getMultiPolygon(layer) {
       if (!layer.hasOwnProperty('latLngs')) {
-        throw new _aureliaLeafletExceptions.AureliaLeafletException('No latLngs given for layer.type "multiPolygone"');
+        throw new _aureliaLeafletExceptions.AureliaLeafletException('No latLngs given for layer.type "multiPolygon"');
       }
-      return this.L.multiPolygone(layer.latlngs, layer.options);
+      return this.L.multiPolygon(layer.latlngs, layer.options);
     };
 
     LayerFactory.prototype.getRectangle = function getRectangle(layer) {
