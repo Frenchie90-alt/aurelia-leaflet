@@ -51,7 +51,7 @@ System.register(['../aurelia-leaflet-exceptions'], function (_export, _context) 
             case 'multiPolyline':
               instance = this.getMultiPolyline(layer);
               break;
-            case 'polygone':
+            case 'polygon':
               instance = this.getPolygon(layer);
               break;
             case 'multiPolygon':
@@ -180,9 +180,9 @@ System.register(['../aurelia-leaflet-exceptions'], function (_export, _context) 
 
         LayerFactory.prototype.getPolygon = function getPolygon(layer) {
           if (!layer.hasOwnProperty('latLngs')) {
-            throw new AureliaLeafletException('No latLngs given for layer.type "polygone"');
+            throw new AureliaLeafletException('No latLngs given for layer.type "polygon"');
           }
-          return this.L.polygone(layer.latlngs, layer.options);
+          return this.L.polygon(layer.latlngs, layer.options);
         };
 
         LayerFactory.prototype.getMultiPolygon = function getMultiPolygon(layer) {
